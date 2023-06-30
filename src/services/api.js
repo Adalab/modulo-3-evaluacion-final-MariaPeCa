@@ -9,7 +9,7 @@ const getDataFromApi = () => {
           id: objectAPI.id,
           image: objectAPI.image,
           name: objectAPI.name,
-          species: objectAPI.name
+          species: objectAPI.species
         }
       });
       console.log(cleanData);
@@ -18,4 +18,4 @@ const getDataFromApi = () => {
 
 };
 
-export default getDataFromApi
+export default getDataFromApi;

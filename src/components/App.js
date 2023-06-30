@@ -2,8 +2,9 @@
 
 //.- de React, de archivos propios, Sass, Images
 import { useEffect, useState } from 'react';
-import getDataFromApi from '../services/Api';
+import getDataFromApi from '../services/api';
 import '../styles/App.scss';
+import CharacterList from './CharacterList';
 
 /*  COMPONENTE */
 function App() {
@@ -40,9 +41,8 @@ function App() {
               ></input>
             </label>
           </form>
-          <ul className='character__list'>
-            <li></li>
-          </ul>
+          <CharacterList characterList={characterList}/>
+          
         </main>
       </div>
     );
