@@ -11,23 +11,30 @@ function App() {
   /* RETURN --> HTML */
   return (
     <div className='container'>
-      <header className='cont_header'>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="" className='title_img'/>
+      <header className='header'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="" className='title_img' />
       </header>
-      <div className="search-container">
-        <input clasName="input-container"
-        type="text" id="search-input" placeholder="Buscar aquí lo que necesites"/>
+      <main className="main">
+        <form className="main__form">
+          <label className="main__form--label" htmlFor="name">
+            <input
+              className="name-input"
+              type="text"
+              placeholder="Escribe el nombre de tu personaje"
+              id="name"
+              htmlFor="name"
+              onInput=""
+            ></input>
+          </label>
+        </form>
+        <ul className='character__list'>
+          <li></li>
+        </ul>
+      </main>
     </div>
-    <div>
-      <ul>
-        <li>Personaje1</li>
-        <li>Personaje2</li>
-        <li>Personaje3</li>
-      </ul>
-    </div>
-    </div>
-  )
+  );
 }
+
 
 /* export*/
 export default App;
