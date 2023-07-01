@@ -5,21 +5,25 @@ import { useEffect, useState } from 'react';
 import getDataFromApi from '../services/api';
 import '../styles/App.scss';
 import CharacterList from './CharacterList';
+import ls from '../services/localStorage';
 
 /*  COMPONENTE */
 function App() {
   /*
     Variables de estado, funciones manejadoras de eventos, variables, funcion handle 
   */
-  const [characterList, setCharacterList] = useState([]);
+  const [characterList, setCharacterList] = useState(ls.get('characters', []));
 
   
     useEffect(() => {
+      if(ls.get('characters', null) === null) {
       getDataFromApi()
         .then((cleanData) => {
           setCharacterList(cleanData);
-        });
 
+          ls.set('characters', cleanData);
+        });
+      }
     }, []);
 
 
@@ -30,19 +34,20 @@ function App() {
           <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="" className='title_img' />
         </header>
         <main className="main">
-          <form className="main__form">
-            <label className="main__form--label" htmlFor="name">
+          <form className="filters">
+            <label className="filter__form--label" htmlFor="search_name">
               <input
-                className="name-input"
+                className="form__input-text"
                 type="text"
                 placeholder="Escribe el nombre de tu personaje"
-                id="name"
-                htmlFor="name"
-              ></input>
+                name="search_name"
+                id="search_name"
+                />
             </label>
           </form>
+          <div className='list'>
           <CharacterList characterList={characterList}/>
-          
+          </div>
         </main>
       </div>
     );

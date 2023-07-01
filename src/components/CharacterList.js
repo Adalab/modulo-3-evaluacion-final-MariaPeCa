@@ -2,8 +2,8 @@ import CharacterItem from "./CharacterItem";
 
 function CharacterList({ characterList }) {
 
-    const htmlLi = characterList.map((eachCharacter, id) => (
-        <li key={id} className="character__list">
+    const htmlLi = characterList.map((eachCharacter) => (
+        <li key={eachCharacter.id} className="character__list">
             <CharacterItem eachCharacter={eachCharacter}/>
             </li>
     ));

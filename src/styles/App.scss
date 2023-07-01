@@ -1,9 +1,27 @@
-
+:root { 
+    font-family: montserrat;
+}
 .input-container {
     border: 5px;
     border-color:aqua;
-
 }
 .title_img {
     height: 50vh;
+}
+
+.card {
+    border-radius: 5px;
+    border-color: aquamarine;
+}
+
+.card__img {
+    width: 200px;
+    height: 200px;
+}
+.character__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    
 }
