@@ -6,6 +6,7 @@ import getDataFromApi from '../services/api';
 import '../styles/App.scss';
 import CharacterList from './CharacterList';
 import ls from '../services/localStorage';
+import Filters from './Filters';
 
 /*  COMPONENTE */
 function App() {
@@ -28,10 +29,13 @@ function App() {
       }
     }, []);
 
-    const handleChangeSearchName = (ev) => {
-      setSearchByName(ev.target.value);
+    const handleFilter = (varName, varValue) => {
+      if (varName === 'name'){
+        setSearchByName(varValue);
+      }
+      //si tengo más filtros los voy poniendo por aquí con else if/ else
     }
-    
+
     /*
     const handleChangeSearchStatus = (ev) => {
       setSearchByStatus(ev.target.value);
@@ -64,32 +68,7 @@ function App() {
           <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="" className='title_img' />
         </header>
         <main className="main">
-          <form className="filters">
-            <label className="filter__form--label" htmlFor="search_name">Name
-              <input
-                className="form__input-text"
-                type="text"
-                placeholder="Who are you searching for?"
-                name="search_name"
-                id="search_name"
-                value={searchByName}
-                onChange={handleChangeSearchName}
-                />
-            </label>
-            {/*
-            <label className='filter__form--label' htmlFor="search_status">Status
-              <select className='form__input-text' name="search_status" id="search_status" value={searchByStatus} onChange={handleChangeSearchStatus}>
-
-                <option value="ALL">Select all status</option>
-                
-                <option value="alive">Alive</option>
-                <option value="dead">Dead</option>
-                <option value="unknown">Unknown</option>
-              
-              </select>
-            </label>
-            */}
-          </form>
+          <Filters searchByName={searchByName} handleFilter={handleFilter}/>
           <div className='list'>
           <CharacterList characterList={filteredCharacter}/>
           </div>
