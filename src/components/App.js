@@ -14,7 +14,7 @@ function App() {
   */
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
   const [searchByName, setSearchByName] = useState('');
-  const [searchByStatus, setSearchByStatus] = useState('ALL');
+  //const [searchByStatus, setSearchByStatus] = useState('ALL');
 
   
     useEffect(() => {
@@ -31,15 +31,32 @@ function App() {
     const handleChangeSearchName = (ev) => {
       setSearchByName(ev.target.value);
     }
-
+    
+    /*
     const handleChangeSearchStatus = (ev) => {
       setSearchByStatus(ev.target.value);
     }
+    */
+    
+    const filteredCharacter = characterList
+    .filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(searchByName.toLowerCase()))
+   /*
+    .filter((eachCharacter) => {
+      if(searchByStatus === 'ALL') {
+        return true;
+      }else {
+        return eachCharacter.status === searchByStatus;
+      }
+    })
+    */
 
-    const  filteredCharacter = characterList
-    .filter((eachCharacter) => eachCharacter.);
-
-
+    //const statuses = ["alive", "dead", "unknown"];
+    //const statuses = characterList.map((eachCharacter) => eachCharacter.status);
+    /*
+    const renderStatusOptions = () => {
+      return statuses.map((eachStatus) => <option key={eachStatus} value={eachStatus}>{eachStatus}</option> );
+    }
+    */
     /* RETURN --> HTML */
     return (
       <div className='container'>
@@ -59,14 +76,19 @@ function App() {
                 onChange={handleChangeSearchName}
                 />
             </label>
+            {/*
             <label className='filter__form--label' htmlFor="search_status">Status
               <select className='form__input-text' name="search_status" id="search_status" value={searchByStatus} onChange={handleChangeSearchStatus}>
-                <option selected disabled value="ALL">Select the status of the character</option>
+
+                <option value="ALL">Select all status</option>
+                
                 <option value="alive">Alive</option>
                 <option value="dead">Dead</option>
                 <option value="unknown">Unknown</option>
+              
               </select>
             </label>
+            */}
           </form>
           <div className='list'>
           <CharacterList characterList={filteredCharacter}/>
