@@ -4,7 +4,7 @@ function CharacterItem ({eachCharacter})  {
     //console.log(eachCharacter);
 return (
     <>
-    <article>
+    <article className="card">
     <Link to={"/character/"+eachCharacter.id}>
     <img className="card__img"  src={eachCharacter.image} alt={`Foto de ${eachCharacter.name}`}/>
     <h3 className="card__title">{eachCharacter.name}</h3>

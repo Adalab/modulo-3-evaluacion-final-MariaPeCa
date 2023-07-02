@@ -103,7 +103,7 @@ function App() {
 
       </main>
       <footer>
-        
+        <p className='footer__txt'>Rick and Morty Adalab</p>
       </footer>
     </div>
   );

@@ -1,5 +1,7 @@
 :root { 
     font-family: montserrat;
+    color: white;
+    
 }
 .container {
     background-color: black;
@@ -11,8 +13,14 @@
 .header {
     text-align: center;
 }
-.main {
-    
+.filter__form--label{
+    margin-left: 50px;
+    border-radius: 5px;
+}
+.form__input-text{
+    margin: 10px ;
+    padding: 10px 5px ;
+
 }
 .title_img {
     height: 50vh;
@@ -26,6 +34,9 @@
 .card__img {
     width: 200px;
     height: 200px;
+    border-radius: 10px;
+    margin: 5px;
+    border: solid 5px aquamarine;
 }
 .character__list {
     list-style: none;
@@ -33,4 +44,13 @@
     flex-wrap: wrap;
     gap: 10px; 
     
+}
+.error__msg {
+    text-align: center;
+}
+.footer__txt {
+    text-align: center;
+    height: 50px;
+    background-color: aquamarine;
+    padding-top: 20px;
 }

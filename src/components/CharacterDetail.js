@@ -16,8 +16,8 @@ function CharacterDetail ({characterData}) {
     );
 } else {
     return (
-        <div>
-            <p className="error__message">“Sorry, we coudn´t find the character to were looking for but let me tell you that 
+        <div className="error__msg">
+            <p>“Sorry, we coudn´t find the character you were looking for but let me tell you that 
             <br />
             'This place is a real Who’s Who of who’s you and me.'”</p>
             <Link to="/">Go back</Link> 

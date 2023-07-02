@@ -5,7 +5,7 @@ function FilterByName({searchByName, handleFilter}) {
         handleFilter('name', ev.target.value);
     }
     return (
-        <label className="filter__form--label" htmlFor="search_name">Name
+        <label className="filter__form--label" htmlFor="search_name">Name:   
             <input
                 className="form__input-text"
                 type="text"
