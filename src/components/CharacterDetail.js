@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 function CharacterDetail ({characterData}) {
+    if (characterData) {
     return (
-        <div>
+        <form>
             <section>               
-               <h2>name: {characterData.name}</h2>
-               <p>species: {characterData.species}</p>
-               <p>origin: {characterData.origin}</p>
-               <p>Episodios: {characterData.episodes}</p>
-               <p>status: {characterData.status}</p>
+               <h2>Name: {characterData.name}</h2>
+               <p>Species: {characterData.species}</p>
+               <p>Planet of origin: {characterData.origin}</p>
+               <p>Episodes: {characterData.episodes}</p>
+               <p>Status: {characterData.status}</p>
                <Link to="/">Go back</Link>        
             </section>
                 <img className="card__img"  src={characterData.image} alt={`Foto de ${characterData.name}`}/>
-        </div>      
+        </form>      
     );
+} else {
+    return (
+        <div>
+            <p className="error__message">“Sorry, we coudn´t find the character to were looking for but let me tell you that 
+            <br />
+            'This place is a real Who’s Who of who’s you and me.'”</p>
+            <Link to="/">Go back</Link> 
+        </div>
+    )
+}
 }
 export default CharacterDetail;
