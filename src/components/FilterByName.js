@@ -1,4 +1,5 @@
 function FilterByName({searchByName, handleFilter}) {
+    
     const handleChangeSearchName = (ev) => {
         //setSearchByName(ev.target.value);
         handleFilter('name', ev.target.value);
