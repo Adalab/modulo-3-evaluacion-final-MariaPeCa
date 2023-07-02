@@ -72,18 +72,18 @@ function App() {
   const routeData = matchPath('/character/:characterId', pathname);
   console.log(routeData);
 
-  const characterId= routeData.params.characterId;
+  const characterId= routeData?.params.characterId;
   console.log(characterId);
 
-  const characterData = characterList.find((character) => character.id === characterId);
-  console.log(characterData);©
+  const characterData = characterList.find((character) => character.id === parseInt(characterId));
+  console.log(characterData)
 
 
   /* RETURN --> HTML */
   return (
     <div className='container'>
       <header className='header'>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="" className='title_img' />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="Rick and Morty" className='title_img' />
       </header>
       <main className="main">
         <Routes>
@@ -95,7 +95,7 @@ function App() {
           </div></> 
         }/>
 
-          <Route path="/character/:characterId" element={<CharacterDetail/>}/>
+          <Route path="/character/:characterId" element={<CharacterDetail characterData={characterData}/>}/>
 
         </Routes>
 

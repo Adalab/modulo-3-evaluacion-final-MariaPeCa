@@ -1,21 +1,17 @@
 import { Link } from "react-router-dom";
-function CharacterDetail () {
+function CharacterDetail ({characterData}) {
     return (
         <div>
-            <section>
-               
-               <p>image: objectAPI.image,</p> 
-               <h2>name: objectAPI.name,</h2>
-               <p>species: objectAPI.species,</p>
-               <p>origin: objectAPI.origin.name,</p>
-               <p>Episodios</p>
-               <p>status: objectAPI.status</p>
-               <Link to="/">Back</Link>
-        
+            <section>               
+               <h2>name: {characterData.name}</h2>
+               <p>species: {characterData.species}</p>
+               <p>origin: {characterData.origin}</p>
+               <p>Episodios: {characterData.episodes}</p>
+               <p>status: {characterData.status}</p>
+               <Link to="/">Go back</Link>        
             </section>
-        </div>
-           
+                <img className="card__img"  src={characterData.image} alt={`Foto de ${characterData.name}`}/>
+        </div>      
     );
-
 }
 export default CharacterDetail;
