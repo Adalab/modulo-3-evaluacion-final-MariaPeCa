@@ -1,7 +1,6 @@
 function FilterByName({searchByName, handleFilter}) {
 
     
-    
     const handleChangeSearchName = (ev) => {
         ev.preventDefault();
         //setSearchByName(ev.target.value);
@@ -23,9 +22,9 @@ function FilterByName({searchByName, handleFilter}) {
                 onChange={handleChangeSearchName}
             />
             {searchByName && characterNotFound && (
-            <p className='notFound'>
+            <p className='error'>
               Sorry, but  {''} 
-              <span className='notFound--word'>{searchByName}</span> does not match any character.
+              <span className='error__msg'>{searchByName}</span> does not match any character.
             </p>
           )}
         </label>
