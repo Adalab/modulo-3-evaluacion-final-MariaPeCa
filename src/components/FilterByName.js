@@ -1,10 +1,17 @@
 function FilterByName({searchByName, handleFilter}) {
+
+    
     
     const handleChangeSearchName = (ev) => {
+        ev.preventDefault();
         //setSearchByName(ev.target.value);
         handleFilter('name', ev.target.value);
+
     }
+    const characterNotFound = true;
+    
     return (
+        <>
         <label className="filter__form--label" htmlFor="search_name">Name:   
             <input
                 className="form__input-text"
@@ -15,7 +22,14 @@ function FilterByName({searchByName, handleFilter}) {
                 value={searchByName}
                 onChange={handleChangeSearchName}
             />
+            {searchByName && characterNotFound && (
+            <p className='notFound'>
+              Sorry, but  {''} 
+              <span className='notFound--word'>{searchByName}</span> does not match any character.
+            </p>
+          )}
         </label>
+       </>
     );
 }
 export default FilterByName;

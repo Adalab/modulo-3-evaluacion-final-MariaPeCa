@@ -2,6 +2,7 @@ import FilterByName from './FilterByName'
 
 function Filters({ searchByName, handleFilter }) {
 
+ 
     return (
         <form className="filters">
            <FilterByName searchByName={searchByName} handleFilter={handleFilter}/>

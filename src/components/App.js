@@ -20,7 +20,7 @@ function App() {
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
   const [searchByName, setSearchByName] = useState('');
   //const [searchByStatus, setSearchByStatus] = useState('ALL');
-
+  
 
   useEffect(() => {
     if (ls.get('characters', null) === null) {
@@ -40,7 +40,7 @@ function App() {
     //si tengo más filtros los voy poniendo por aquí con else if/ else
   }
 
-  /*
+/*
   const handleChangeSearchStatus = (ev) => {
     setSearchByStatus(ev.target.value);
   }
