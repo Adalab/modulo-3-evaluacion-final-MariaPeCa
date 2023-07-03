@@ -10,16 +10,16 @@ function FilterBySpecies({searchBySpecies, handleFilter, species}) {
 
     return (
         <label className='filter__form--label' htmlFor='search__species'>
-            Choose one species
+            Species
             <select
-                className='speciesFilter--box'
+                className='form__input-text'
                 name='search_species'
                 id='search_species'
                 value={searchBySpecies}
                 onChange={handleChangeSearchSpecies}
             >
                 <option value='ALL' className="speciesFilter--all">
-                    Choose them all
+                    Choose all species
                 </option>
                {renderSpeciesOptions()}
                 <option value='human' className="speciesFilter--human">Human</option>

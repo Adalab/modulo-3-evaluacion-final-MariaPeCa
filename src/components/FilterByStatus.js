@@ -1,7 +1,6 @@
 
 function FilterByStatus({ searchByStatus, handleFilter, statuses }) {
   const handleChangeSearchStatus = (ev) => {
-    //setSearchByStatus(ev.target.value);
     handleFilter('status', ev.target.value);
   }
   
@@ -11,10 +10,10 @@ function FilterByStatus({ searchByStatus, handleFilter, statuses }) {
   
   return (
     <label className='filter__form--label' htmlFor="search__status">
-      Choose a status
+      Status
       <select
         className='form__input-text'
-        name="search__status"
+        name="search_status"
         id="search_status"
         value={searchByStatus}
         onChange={handleChangeSearchStatus}

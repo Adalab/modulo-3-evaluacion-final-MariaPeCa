@@ -1,6 +1,5 @@
 //seccion import
 
-//.- de React, de archivos propios, Sass, Images
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router';
@@ -10,13 +9,11 @@ import CharacterList from './CharacterList';
 import ls from '../services/localStorage';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
-
+import Footer from './Footer';
 
 /*  COMPONENTE */
 function App() {
-  /*
-    Variables de estado, funciones manejadoras de eventos, variables, funcion handle 
-  */
+  
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
   const [searchByName, setSearchByName] = useState('');
   const [searchByStatus, setSearchByStatus] = useState('ALL');
@@ -38,7 +35,6 @@ function App() {
     if (varName === 'name') {
       setSearchByName(varValue);
     }
-    //si tengo más filtros los voy poniendo por aquí con else if/ else
     else if (varName === 'status') {
       setSearchByStatus(varValue)
     }
@@ -70,7 +66,7 @@ function App() {
     });
 
 
-  //const statuses = ["alive", "dead", "unknown"];
+  
   const statuses = characterList.map((eachCharacter) => eachCharacter.status);
 
   const species = characterList.map((eachCharacter) => eachCharacter.species);
@@ -91,7 +87,7 @@ function App() {
   console.log(characterData)
 
 
-  /* RETURN --> HTML */
+
   return (
     <div className='container'>
       <header className='header'>
@@ -132,15 +128,9 @@ function App() {
 
 
       </main>
-      <footer>
-        <p className='footer__txt'>
-          Rick and Morty Adalab
-        </p>
-      </footer>
+      <Footer/>
     </div>
   );
 }
 
-
-/* export*/
 export default App;

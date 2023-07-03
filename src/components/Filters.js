@@ -24,8 +24,7 @@ function Filters({ searchByName, searchByStatus, searchBySpecies, handleFilter, 
       searchBySpecies={searchBySpecies}
       handleFilter={handleFilter}
       species={species}
-      />
-      
+      />   
     </form>
   );
 }

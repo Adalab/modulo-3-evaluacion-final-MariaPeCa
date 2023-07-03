@@ -9,7 +9,7 @@ function CharacterList({ characterList }) {
     ));
 
     return (
-        <ul className='character__list'>
+        <ul className="character__list">
             {htmlLi}
         </ul>
     );
