@@ -7,7 +7,7 @@ function FilterByName({searchByName, handleFilter}) {
 
     }
     
-    const characterNotFound = false;
+    //const characterNotFound = true;
     
     return (
        
@@ -22,12 +22,15 @@ function FilterByName({searchByName, handleFilter}) {
                 onChange={handleChangeSearchName}
                
             />
-            {searchByName && characterNotFound && (
+            {/*
+            {searchByName && !characterNotFound && (
             <p className="error__name">
               Sorry, but {''}
               <span className="error__msg">{searchByName}</span> does not match any character.
             </p>
           )}
+        */}
+
         </label>
       
     );

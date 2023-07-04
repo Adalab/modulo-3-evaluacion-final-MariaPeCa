@@ -12,12 +12,10 @@ function CharacterDetail({ characterData }) {
                     <p>Status: {characterData.status}</p>
                     <img className="card__img-detail" src={characterData.image} alt={`Foto de ${characterData.name}`} /> 
                 </div>
-               
                     <br />
                     <button className="back__detail-btn">
                     <Link to="/" className="back__detail"> Go back</Link>   
-                    </button> 
-               
+                    </button>                
             </form>
         );
     } else {
