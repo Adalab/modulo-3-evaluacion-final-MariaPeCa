@@ -13,7 +13,7 @@ import Footer from './Footer';
 
 /*  COMPONENTE */
 function App() {
-  
+
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
   const [searchByName, setSearchByName] = useState('');
   const [searchByStatus, setSearchByStatus] = useState('ALL');
@@ -30,6 +30,7 @@ function App() {
         });
     }
   }, []);
+
 
   const handleFilter = (varName, varValue) => {
     if (varName === 'name') {
@@ -66,11 +67,8 @@ function App() {
     });
 
 
-  
   const statuses = characterList.map((eachCharacter) => eachCharacter.status);
-
   const species = characterList.map((eachCharacter) => eachCharacter.species);
-
 
 
   // OBTERNER INFO DEL PERSONAJE
@@ -78,13 +76,13 @@ function App() {
   const { pathname } = useLocation();
 
   const routeData = matchPath('/character/:characterId', pathname);
-  console.log(routeData);
+
 
   const characterId = routeData?.params.characterId;
-  console.log(characterId);
+  
 
   const characterData = characterList.find((character) => character.id === parseInt(characterId));
-  console.log(characterData)
+  
 
 
 
@@ -99,7 +97,6 @@ function App() {
       </header>
       <main className="main">
         <Routes>
-
           <Route path="/"
             element={<>
               <Filters
@@ -116,19 +113,14 @@ function App() {
                 />
               </div>
             </>} />
-
           <Route
             path="/character/:characterId"
             element={<CharacterDetail
               characterData={characterData} />}
           />
-
         </Routes>
-
-
-
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

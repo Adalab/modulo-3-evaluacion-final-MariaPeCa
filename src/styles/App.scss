@@ -1,118 +1,132 @@
-:root { 
-    font-family: montserrat;
-    color: white;
-    
+:root {
+  font-family: montserrat;
+  color: white;
 }
 .container {
-    background-color: black;
+  background-color: black;
 }
 .input-container {
-    border: 5px;
-    border-color:aqua;
-   
+  border: 5px;
+  border-color: aqua;
 }
 .header {
-    text-align: center;
+  text-align: center;
 }
 .main {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .filters {
-
-    background-color:rgb(22, 178, 178);
-    border-radius: 10px;
-    border: solid 5px aquamarine;
-    padding-right: 30px;
-
+  background-color: rgb(22, 178, 178);
+  border-radius: 10px;
+  border: solid 5px aquamarine;
+  padding-right: 30px;
 }
-.filter__form--label{
-    margin-left: 50px;
-    
+.filter__form--label {
+  margin-left: 50px;
 }
-.form__input-text{
-    margin: 10px ;
-    padding: 10px 5px ;
-    width: 250px;
-    border: solid 5px darkcyan;
-    border-radius: 10px;
+.form__input-text {
+  margin: 10px;
+  padding: 10px 5px;
+  width: 250px;
+  border: solid 5px darkcyan;
+  border-radius: 10px;
 }
 .title_img {
-    height: 50vh;
+  height: 50vh;
 }
 .card__box {
-    text-align: center;
-    background-color: aquamarine; 
-     width: 250px;
-     margin-top: 30px;
-     padding-top: 10px;
-     border-radius: 10px;
-     border: solid 5px rgb(22, 178, 178);
-     text-decoration: none;
-     font-weight: bold;
-     color: darkcyan;
+  height: 350px;
+  text-align: center;
+  background-color: aquamarine;
+  width: 250px;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-radius: 10px;
+  border: solid 5px rgb(22, 178, 178);
+  text-decoration: none;
+  font-weight: bold;
+  color: darkcyan;
 }
-
+.card__box > a {
+  text-decoration-line: none;
+  color: darkcyan;
+}
 .card__title {
-    text-decoration: none;
+  text-decoration-line: none;
+  text-decoration: none;
 }
-.card__description{
-    text-decoration: none;
+.card__description {
+  text-decoration-line: none;
+  text-decoration: none;
 }
 .card__img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    margin: 5px;
-    border: solid 5px rgb(22, 178, 178);
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 5px;
+  border: solid 5px rgb(22, 178, 178);
 }
-.card__box-detail{
-   
-    color: darkcyan;
-    font-weight: bold;
-    text-align: center;
-    background-color: aquamarine; 
-     width: 550px;
-     margin-top: 30px;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     border-radius: 10px;
-     border: solid 10px rgb(22, 178, 178);
-     text-decoration: none;
-     
+.form__detail{
+  text-align: center;
+}
+.card__box-detail {
+  color: darkcyan;
+  font-weight: bold;
+  text-align: center;
+  background-color: aquamarine;
+  width: 550px;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  border: solid 10px rgb(22, 178, 178);
 }
 .card__img-detail {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    margin: 5px;
-    border: solid 10px rgb(22, 178, 178);
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin: 5px;
+  border: solid 10px rgb(22, 178, 178);
 }
-.back__detail{
-    color: darkcyan;
+.back__detail-btn{
+  text-align: center;
+  border: solid 5px rgb(22, 178, 178);
+  background-color: aquamarine;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.back__detail {
+  color: darkcyan;
 }
 .character__list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; 
-    margin-left: 40px;
-    margin-right: 40px;
-    text-decoration: none;
+  text-decoration: none;
+  text-decoration-line: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-left: 40px;
+  margin-right: 70px;
+  justify-content: center;
 }
-.error__name{
-    text-align: center;
+.character__list-item {
+  list-style-type: none;
+  text-decoration-line: none;
+}
+.error__name {
+  text-align: center;
 }
 .error__msg {
-    text-align: center;
-    
+  text-align: center;
+  color:darkmagenta;
+  font-weight: bold;
 }
 .footer__txt {
-    text-align: center;
-    height: 50px;
-    background-color:rgb(22, 178, 178);
-    padding-top: 20px;
+  text-align: center;
+  height: 50px;
+  background-color: rgb(22, 178, 178);
+  padding-top: 20px;
 }

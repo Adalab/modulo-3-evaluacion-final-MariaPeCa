@@ -1,11 +1,13 @@
 
 function FilterByStatus({ searchByStatus, handleFilter, statuses }) {
+  const uniqueStatuses = Array.from(new Set(statuses));
+
   const handleChangeSearchStatus = (ev) => {
     handleFilter('status', ev.target.value);
   }
   
   const renderStatusOptions = () => {
-    return statuses.map((eachStatus, index) => <option key={index} value={eachStatus}>{eachStatus}</option>);
+    return uniqueStatuses.map((eachStatus, index) => (<option key={index} value={eachStatus}>{eachStatus}</option>));
   }
   
   return (
@@ -20,10 +22,6 @@ function FilterByStatus({ searchByStatus, handleFilter, statuses }) {
       >
         <option value="ALL">Choose all status</option>
         {renderStatusOptions()}
-        <option value="alive" className="search__status-alive">Alive</option>
-        <option value="dead" className="search__status-dead">Dead</option>
-        <option value="unknown" className="search__status-unknown">Unknown</option>
-
       </select>
     </label>
   );

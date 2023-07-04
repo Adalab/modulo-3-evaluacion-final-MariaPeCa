@@ -6,7 +6,8 @@ function FilterByName({searchByName, handleFilter}) {
         handleFilter('name', ev.target.value);
 
     }
-    const characterNotFound = true;
+    
+    const characterNotFound = false;
     
     return (
        
@@ -14,11 +15,12 @@ function FilterByName({searchByName, handleFilter}) {
             <input
                 className="form__input-text"
                 type="text"
-                placeholder="What character are you looking for?"
+                placeholder=" What character are you looking for?"
                 name="search_name"
                 id="search_name"
                 value={searchByName}
                 onChange={handleChangeSearchName}
+               
             />
             {searchByName && characterNotFound && (
             <p className="error__name">

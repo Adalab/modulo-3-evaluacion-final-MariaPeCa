@@ -15,7 +15,7 @@ const getDataFromApi = () => {
           episodes: objectAPI.episode.length
         }
       });
-      console.log(cleanData);
+      cleanData.sort((a, b) => a.name.localeCompare(b.name));
       return cleanData;
     })
 

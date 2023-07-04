@@ -1,11 +1,13 @@
 function FilterBySpecies({searchBySpecies, handleFilter, species}) {
+    const uniqueSpecies = Array.from(new Set(species));
+
     const handleChangeSearchSpecies = (ev) => {
         //setSearchBySpecies(ev.target.value);
         handleFilter('species', ev.target.value);
       };
       
       const renderSpeciesOptions = () => {
-        return species.map((eachSpecies, index) => <option key={index} value={eachSpecies}>{eachSpecies}</option> );
+        return uniqueSpecies.map((eachSpecies, index) => (<option key={index} value={eachSpecies}>{eachSpecies}</option> ));
       }
 
     return (
@@ -22,8 +24,6 @@ function FilterBySpecies({searchBySpecies, handleFilter, species}) {
                     Choose all species
                 </option>
                {renderSpeciesOptions()}
-                <option value='human' className="speciesFilter--human">Human</option>
-                <option value='alien' className="speciesFilter--alien">Alien</option>
             </select>
         </label>
     );
