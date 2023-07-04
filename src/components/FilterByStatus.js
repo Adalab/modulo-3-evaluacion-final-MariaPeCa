@@ -20,7 +20,7 @@ function FilterByStatus({ searchByStatus, handleFilter, statuses }) {
         value={searchByStatus}
         onChange={handleChangeSearchStatus}
       >
-        <option value="ALL">Choose all status</option>
+        <option value="ALL">Choose all statuses</option>
         {renderStatusOptions()}
       </select>
     </label>
